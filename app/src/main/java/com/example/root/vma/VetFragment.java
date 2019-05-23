@@ -41,6 +41,7 @@ public class VetFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_vet, container,false);
 
         mTitleField = (EditText) v.findViewById(R.id.vet_title);
+        mTitleField.setText(mVisit.getTitle());
         mTitleField.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -64,6 +65,7 @@ public class VetFragment extends Fragment {
         mDateButton.setEnabled(false);
 
         mSolvedCheckBox = (CheckBox) v.findViewById(R.id.vet_solved);
+        mSolvedCheckBox.setChecked(mVisit.isSolved());
         mSolvedCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
