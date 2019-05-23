@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@layout/layout_border">
 
 
     <TextView
@@ -12,6 +13,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/visit_title"
+        android:textColor="#FA070707"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/visit_date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,6 +26,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/visit_date"
+        android:textColor="#FC0C0C0C"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -31,7 +36,7 @@
 
     <ImageView
         android:contentDescription="@string/visit_title"
-        android:id="@+id/imageView"
+        android:id="@+id/visit_solved"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_goneMarginTop="16dp"

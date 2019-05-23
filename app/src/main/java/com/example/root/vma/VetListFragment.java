@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,18 +48,22 @@ public class VetListFragment extends Fragment {
         private Visit mVisit;
         private TextView mTitleTextView;
         private TextView mDateTextView;
+        private ImageView mSolvedImageView;
 
         public VisitHolder (LayoutInflater inflater, ViewGroup parent){
             super(inflater.inflate(R.layout.list_item_visit,parent,false));
             itemView.setOnClickListener(this);
             mTitleTextView = (TextView) itemView.findViewById(R.id.visit_title);
             mDateTextView = (TextView) itemView.findViewById(R.id.visit_date);
+            mSolvedImageView = (ImageView) itemView.findViewById(R.id.visit_solved);
         }
 
         public void bind(Visit visit){
             mVisit = visit;
             mTitleTextView.setText(mVisit.getTitle());
             mDateTextView.setText(mVisit.getDate().toString());
+            mSolvedImageView.setVisibility(visit.isSolved() ? View.VISIBLE : View.GONE);
+
         }
 
 
