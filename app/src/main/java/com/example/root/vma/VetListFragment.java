@@ -1,5 +1,6 @@
 package com.example.root.vma;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -69,9 +70,8 @@ public class VetListFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
-            Toast.makeText(getActivity(),
-                    mVisit.getTitle() + " clicked!", Toast.LENGTH_LONG)
-                    .show();
+           Intent intent  = new Intent(getActivity(),VetActivity.class);
+           startActivity(intent);
         }
     }
 
