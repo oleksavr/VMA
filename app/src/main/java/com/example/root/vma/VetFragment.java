@@ -28,7 +28,7 @@ public class VetFragment extends Fragment {
     private CheckBox mSolvedCheckBox;
 
 
-    private static VetFragment newInstance(UUID visitID){
+    public static VetFragment newInstance(UUID visitID){
         Bundle args = new Bundle();
         args.putSerializable(ARG_VISIT_ID, visitID);
 

@@ -11,7 +11,7 @@ import java.util.UUID;
 
 public class VetActivity extends SingleFragmentActivity {
 
-    public static final String EXTRA_VET_ID = "com.example.root.vma.visit_id";
+    private static final String EXTRA_VET_ID = "com.example.root.vma.visit_id";
 
     public static Intent newIntent(Context packegeContext, UUID visitId){
         Intent intent = new Intent(packegeContext, VetActivity.class);
@@ -22,6 +22,8 @@ public class VetActivity extends SingleFragmentActivity {
 
     @Override
     protected Fragment createFragment() {
-        return new VetFragment();
+        UUID visitID = (UUID) getIntent()
+                .getSerializableExtra(EXTRA_VET_ID);
+        return VetFragment.newInstance(visitID);
     }
 }
