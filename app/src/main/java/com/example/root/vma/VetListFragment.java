@@ -35,12 +35,22 @@ public class VetListFragment extends Fragment {
     }
 
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateUI();
+    }
+
     private void updateUI(){
         VisitLab visitLab = VisitLab.get(getActivity());
         List<Visit> visits = visitLab.getVisits();
 
-        mAdapter = new VisitAdapter(visits);
-        mVisitRecyclerView.setAdapter(mAdapter);
+        if(mAdapter == null) {
+            mAdapter = new VisitAdapter(visits);
+            mVisitRecyclerView.setAdapter(mAdapter);
+        }else {
+            mAdapter.notifyDataSetChanged();
+        }
     }
 
 
