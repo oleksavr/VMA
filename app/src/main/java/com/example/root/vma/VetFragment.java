@@ -41,8 +41,7 @@ public class VetFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        UUID visitID = (UUID) getActivity().getIntent()
-                .getSerializableExtra(VetActivity.EXTRA_VET_ID);
+       UUID visitID = (UUID) getArguments().getSerializable(ARG_VISIT_ID);
         mVisit = VisitLab.get(getActivity()).getVisit(visitID);
 
     }
