@@ -20,10 +20,22 @@ import static android.widget.CompoundButton.*;
 
 public class VetFragment extends Fragment {
 
+    public static final String ARG_VISIT_ID = "visit_id";
+
     private Visit mVisit;
     private EditText mTitleField;
     private Button mDateButton;
     private CheckBox mSolvedCheckBox;
+
+
+    private static VetFragment newInstance(UUID visitID){
+        Bundle args = new Bundle();
+        args.putSerializable(ARG_VISIT_ID, visitID);
+
+        VetFragment fragment = new VetFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
 
     @Override
