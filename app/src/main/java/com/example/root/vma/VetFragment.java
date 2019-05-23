@@ -14,6 +14,8 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 
+import java.util.UUID;
+
 import static android.widget.CompoundButton.*;
 
 public class VetFragment extends Fragment {
@@ -27,7 +29,9 @@ public class VetFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mVisit = new Visit();
+        UUID visitID = (UUID) getActivity().getIntent()
+                .getSerializableExtra(VetActivity.EXTRA_VET_ID);
+        mVisit = VisitLab.get(getActivity()).getVisit(visitID);
 
     }
 
