@@ -70,7 +70,7 @@ public class VetListFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
-           Intent intent  = new Intent(getActivity(),VetActivity.class);
+           Intent intent = VetActivity.newIntent(getActivity(),mVisit.getId());
            startActivity(intent);
         }
     }
