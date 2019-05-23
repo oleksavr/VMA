@@ -80,7 +80,7 @@ public class VetListFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
-           Intent intent = VetActivity.newIntent(getActivity(),mVisit.getId());
+           Intent intent = VisitPagerActivity.newIntent(getActivity(),mVisit.getId());
            startActivity(intent);
         }
     }
