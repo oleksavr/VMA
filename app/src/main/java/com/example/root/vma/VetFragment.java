@@ -81,7 +81,8 @@ public class VetFragment extends Fragment {
            @Override
            public void onClick(View view) {
                FragmentManager fragmentManager = getFragmentManager();
-               DatePickerFragment dialog = new DatePickerFragment();
+               DatePickerFragment dialog = DatePickerFragment
+                       .newInstance(mVisit.getDate());
                dialog.show(fragmentManager,DIALOG_DATE);
 
            }
