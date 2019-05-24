@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -21,6 +22,8 @@ import static android.widget.CompoundButton.*;
 public class VetFragment extends Fragment {
 
     public static final String ARG_VISIT_ID = "visit_id";
+    public static final String DIALOG_DATE = "DialogDate";
+
 
     private Visit mVisit;
     private EditText mTitleField;
@@ -73,7 +76,16 @@ public class VetFragment extends Fragment {
 
         mDateButton = (Button) v.findViewById(R.id.vet_date);
         mDateButton.setText(mVisit.getDate().toString());
-        mDateButton.setEnabled(false);
+       mDateButton.setOnClickListener(new View.OnClickListener(){
+
+           @Override
+           public void onClick(View view) {
+               FragmentManager fragmentManager = getFragmentManager();
+               DatePickerFragment dialog = new DatePickerFragment();
+               dialog.show(fragmentManager,DIALOG_DATE);
+
+           }
+       });
 
         mSolvedCheckBox = (CheckBox) v.findViewById(R.id.vet_solved);
         mSolvedCheckBox.setChecked(mVisit.isSolved());
