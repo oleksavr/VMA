@@ -53,5 +53,12 @@ public class VisitPagerActivity extends AppCompatActivity {
             }
         });
 
+        for (int i = 0; i < mVisits.size(); i++){
+            if(mVisits.get(i).getId().equals(visitId)){
+                mViewPager.setCurrentItem(i);
+                break;
+            }
+        }
+
     }
 }
