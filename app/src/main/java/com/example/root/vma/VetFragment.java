@@ -24,6 +24,8 @@ public class VetFragment extends Fragment {
     public static final String ARG_VISIT_ID = "visit_id";
     public static final String DIALOG_DATE = "DialogDate";
 
+    public static final int REQUEST_DATE = 0;
+
 
     private Visit mVisit;
     private EditText mTitleField;
@@ -83,6 +85,7 @@ public class VetFragment extends Fragment {
                FragmentManager fragmentManager = getFragmentManager();
                DatePickerFragment dialog = DatePickerFragment
                        .newInstance(mVisit.getDate());
+               dialog.setTargetFragment(VetFragment.this,REQUEST_DATE);
                dialog.show(fragmentManager,DIALOG_DATE);
 
            }
