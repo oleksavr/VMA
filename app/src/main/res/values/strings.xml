@@ -7,4 +7,8 @@
     <string name="visit_title">Visit Title</string>
     <string name="visit_date">Visit Date</string>
     <string name="date_picker">Date of visit: </string>
+    <string name="new_visit">New Visit</string>
+    <string name="show_subtitle">Show subtitle</string>
+    <string name="hide_subtitle">Hide subtitle</string>
+    <string name="subtitle_format">%1d crimes</string>
 </resources>
