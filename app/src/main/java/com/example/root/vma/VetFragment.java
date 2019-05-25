@@ -80,7 +80,23 @@ public class VetFragment extends Fragment {
         });
 
         mDetailsField = (EditText) v.findViewById(R.id.vet_details);
-        mDetailsField.setText(mVisit.getD);
+        mDetailsField.setText(mVisit.getDetails());
+        mDetailsField.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                    mVisit.setDetails(charSequence.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
 
         mDateButton = (Button) v.findViewById(R.id.vet_date);
