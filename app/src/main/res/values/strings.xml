@@ -12,4 +12,9 @@
     <string name="hide_subtitle">Hide subtitle</string>
     <string name="subtitle_format">%1d crimes</string>
     <string name="enter_a_ditals">Enter a ditals</string>
+
+    <plurals name="subtitle_plural">
+        <item quantity="one">%1d crime</item>
+        <item quantity="other">%1d crimes</item>
+    </plurals>
 </resources>

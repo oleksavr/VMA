@@ -101,7 +101,8 @@ public class VetListFragment extends Fragment {
     private void updateSubtitle(){
         VisitLab visitLab = VisitLab.get(getActivity());
         int visitCount = visitLab.getVisits().size();
-        String subtitle = getString(R.string.subtitle_format,visitCount);
+        String subtitle = getResources().getQuantityString(R.plurals.subtitle_plural,visitCount,visitCount);
+
 
         if(!mSubtitleVisible){
             subtitle = null;
