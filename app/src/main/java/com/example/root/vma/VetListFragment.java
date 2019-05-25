@@ -69,6 +69,9 @@ public class VetListFragment extends Fragment {
                         .newIntent(getActivity(),visit.getId());
                 startActivity(intent);
                 return true;
+            case R.id.show_subtitle:
+                updateSubtitle();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
