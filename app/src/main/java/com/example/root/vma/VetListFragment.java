@@ -92,6 +92,10 @@ public class VetListFragment extends Fragment {
         int visitCount = visitLab.getVisits().size();
         String subtitle = getString(R.string.subtitle_format,visitCount);
 
+        if(!mSubtitleVisible){
+            subtitle = null;
+        }
+
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         activity.getSupportActionBar().setSubtitle(subtitle);
     }
