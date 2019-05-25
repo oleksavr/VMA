@@ -32,6 +32,7 @@ public class VetFragment extends Fragment {
 
     private Visit mVisit;
     private EditText mTitleField;
+    private EditText mDetailsField;
     private Button mDateButton;
     private CheckBox mSolvedCheckBox;
 
@@ -77,6 +78,9 @@ public class VetFragment extends Fragment {
 
             }
         });
+
+        mDetailsField = (EditText) v.findViewById(R.id.vet_details);
+        mDetailsField.setText(mVisit.getD);
 
 
         mDateButton = (Button) v.findViewById(R.id.vet_date);

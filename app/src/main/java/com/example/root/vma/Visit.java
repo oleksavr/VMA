@@ -7,6 +7,7 @@ public class Visit {
 
     private UUID mId;
     private String mTitle;
+    private String mDetails;
     private Date mDate;
     private boolean mSolved;
 
@@ -19,12 +20,22 @@ public class Visit {
         return mId;
     }
 
+
+
     public String getTitle() {
         return mTitle;
     }
 
     public void setTitle(String title) {
         mTitle = title;
+    }
+
+    public void setDetails(String details ) {
+        mDetails = details;
+    }
+
+    public String getDetails(){
+        return mDetails;
     }
 
     public Date getDate() {
