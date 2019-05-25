@@ -30,6 +30,10 @@ public class VisitLab {
         }
     }
 
+    public void addVisit(Visit v){
+        mVisits.add(v);
+    }
+
     public List<Visit> getVisits(){
         return mVisits;
     }
