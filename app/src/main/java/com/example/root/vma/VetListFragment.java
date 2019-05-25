@@ -110,6 +110,7 @@ public class VetListFragment extends Fragment {
         }else {
             mAdapter.notifyDataSetChanged();
         }
+        updateSubtitle();
     }
 
 
