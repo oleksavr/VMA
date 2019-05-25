@@ -21,13 +21,6 @@ public class VisitLab {
 
     private VisitLab(Context context){
         mVisits = new ArrayList<>();
-
-        for(int i=0; i<100;i++){
-            Visit visit = new Visit();
-            visit.setTitle("Visit # " + i);
-            visit.setSolved(i%2==0);
-            mVisits.add(visit);
-        }
     }
 
     public void addVisit(Visit v){
