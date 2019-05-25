@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".VisitPagerActivity" />
+        <activity android:name=".VisitPagerActivity"
+            android:parentActivityName=".VetListActivity"/>
     </application>
 
 </manifest>
