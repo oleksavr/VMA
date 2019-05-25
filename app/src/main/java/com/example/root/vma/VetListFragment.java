@@ -22,6 +22,8 @@ import java.util.List;
 
 public class VetListFragment extends Fragment {
 
+    private static final String SAVED_SUBTITLE_VISIBLE = "subtitle";
+
     private RecyclerView mVisitRecyclerView;
     private VisitAdapter mAdapter;
     private boolean mSubtitleVisible;
@@ -41,6 +43,10 @@ public class VetListFragment extends Fragment {
                .findViewById(R.id.visit_recycler_view);
        mVisitRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+       if(savedInstanceState != null){
+           mSubtitleVisible = savedInstanceState.getBoolean(SAVED_SUBTITLE_VISIBLE);
+       }
+
        updateUI();
 
         return view;
@@ -53,6 +59,11 @@ public class VetListFragment extends Fragment {
         updateUI();
     }
 
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean(SAVED_SUBTITLE_VISIBLE,mSubtitleVisible);
+    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
