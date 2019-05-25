@@ -16,7 +16,9 @@
         android:id="@+id/vet_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/vet_title_hint"/>
+        android:autoText="false"
+        android:hint="@string/vet_title_hint"
+        android:inputType="textShortMessage" />
 
     <TextView
         style="?android:listSeparatorTextViewStyle"
@@ -24,6 +26,13 @@
         android:layout_height="wrap_content"
         android:hint="@string/vet_details_label"
         />
+
+    <EditText
+        android:id="@+id/vet_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_a_ditals"
+        android:inputType="textLongMessage" />
 
     <Button
         android:id="@+id/vet_date"
