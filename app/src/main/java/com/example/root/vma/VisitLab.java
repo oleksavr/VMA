@@ -1,6 +1,7 @@
 package com.example.root.vma;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,17 +12,26 @@ public class VisitLab {
 
     private static VisitLab sVisitLab;
     private List<Visit> mVisits;
+    private Context mContext;
+    private SQLiteDatabase mDatabase;
+
+
+
+    private VisitLab(Context context){
+        mContext = context.getApplicationContext();
+        mDatabase = new VisitBaseHelper(mContext)
+                .getWritableDatabase();
+        mVisits = new ArrayList<>();
+    }
 
     public static VisitLab get(Context context){
+
         if(sVisitLab == null){
             sVisitLab = new VisitLab(context);
         }
         return sVisitLab;
     }
 
-    private VisitLab(Context context){
-        mVisits = new ArrayList<>();
-    }
 
     public void addVisit(Visit v){
         mVisits.add(v);
