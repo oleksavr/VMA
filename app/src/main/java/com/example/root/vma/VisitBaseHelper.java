@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.root.vma.VisitsDbSchema.VisitTable;
+
 public class VisitBaseHelper extends SQLiteOpenHelper {
 
     public static final int VERSION = 1;
@@ -15,6 +17,16 @@ public class VisitBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        db.execSQL("create table " + VisitTable.NAME + "(" +
+                " _id integer primary key autoincrement, " +
+                VisitTable.Cols.UUID + ", " +
+                VisitTable.Cols.TITLE + ", " +
+                VisitTable.Cols.DESCRIPTION + ", " +
+                VisitTable.Cols.DATE + ", " +
+                VisitTable.Cols.SOLVED +
+                ")"
+        );
+
 
     }
 
