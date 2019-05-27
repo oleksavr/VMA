@@ -11,7 +11,7 @@ import java.util.UUID;
 public class VisitLab {
 
     private static VisitLab sVisitLab;
-    private List<Visit> mVisits;
+
     private Context mContext;
     private SQLiteDatabase mDatabase;
 
@@ -21,7 +21,7 @@ public class VisitLab {
         mContext = context.getApplicationContext();
         mDatabase = new VisitBaseHelper(mContext)
                 .getWritableDatabase();
-        mVisits = new ArrayList<>();
+
     }
 
     public static VisitLab get(Context context){
@@ -34,19 +34,15 @@ public class VisitLab {
 
 
     public void addVisit(Visit v){
-        mVisits.add(v);
+
     }
 
     public List<Visit> getVisits(){
-        return mVisits;
+        return new ArrayList<>();
     }
 
     public Visit getVisit(UUID id){
-        for(Visit visit:mVisits){
-            if(visit.getId().equals(id)){
-                return visit;
-            }
-        }
+
         return null;
     }
 }
