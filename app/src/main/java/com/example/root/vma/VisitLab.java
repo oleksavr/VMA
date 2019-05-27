@@ -1,7 +1,10 @@
 package com.example.root.vma;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+
+import com.example.root.vma.VisitsDbSchema.VisitTable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,5 +47,17 @@ public class VisitLab {
     public Visit getVisit(UUID id){
 
         return null;
+    }
+
+    private static ContentValues getContentValues(Visit visit){
+        ContentValues values = new ContentValues();
+        values.put(VisitTable.Cols.UUID, visit.getId().toString());
+        values.put(VisitTable.Cols.TITLE,visit.getTitle());
+        values.put(VisitTable.Cols.DESCRIPTION,visit.getDetails());
+        values.put(VisitTable.Cols.DATE,visit.getDate().getTime());
+        values.put(VisitTable.Cols.SOLVED,visit.isSolved() ? 1 : 0);
+
+        return values;
+
     }
 }
