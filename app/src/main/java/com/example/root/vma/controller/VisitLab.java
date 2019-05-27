@@ -48,7 +48,21 @@ public class VisitLab {
     }
 
     public List<Visit> getVisits(){
-        return new ArrayList<>();
+       List<Visit> visits = new ArrayList<>();
+
+       VisitCursorWrapper cursorWrapper = queryVisits(null,null);
+
+       try{
+           cursorWrapper.moveToFirst();
+           while (!cursorWrapper.isAfterLast()){
+               visits.add(cursorWrapper.getVisit());
+               cursorWrapper.moveToNext();
+           }
+       } finally {
+           cursorWrapper.close();
+       }
+
+       return visits;
     }
 
     public Visit getVisit(UUID id){
