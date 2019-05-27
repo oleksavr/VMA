@@ -38,6 +38,10 @@ public class VisitLab {
 
     public void addVisit(Visit v){
 
+        ContentValues values = getContentValues(v);
+        mDatabase.insert(VisitTable.NAME, null,values);
+
+
     }
 
     public List<Visit> getVisits(){
@@ -47,6 +51,15 @@ public class VisitLab {
     public Visit getVisit(UUID id){
 
         return null;
+    }
+
+    public void  updateVisit(Visit visit){
+        String uuidString = visit.getId().toString();
+        ContentValues values = getContentValues(visit);
+
+        mDatabase.update(VisitTable.NAME,values,
+                VisitTable.Cols.UUID + " = ?",
+                new String[] {uuidString});
     }
 
     private static ContentValues getContentValues(Visit visit){
