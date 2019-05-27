@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".VetListActivity">
+        <activity android:name=".controller.VetListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,8 +18,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".VisitPagerActivity"
-            android:parentActivityName=".VetListActivity"/>
+        <activity android:name=".controller.VisitPagerActivity"
+            android:parentActivityName=".controller.VetListActivity"/>
     </application>
 
 </manifest>
