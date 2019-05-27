@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.root.vma.database.VisitBaseHelper;
 import com.example.root.vma.database.VisitCursorWrapper;
 import com.example.root.vma.database.VisitsDbSchema.VisitTable;
 import com.example.root.vma.model.Visit;
