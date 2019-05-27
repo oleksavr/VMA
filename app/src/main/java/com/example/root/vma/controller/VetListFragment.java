@@ -122,6 +122,7 @@ public class VetListFragment extends Fragment {
             mAdapter = new VisitAdapter(visits);
             mVisitRecyclerView.setAdapter(mAdapter);
         }else {
+            mAdapter.setVisits(visits);
             mAdapter.notifyDataSetChanged();
         }
         updateSubtitle();
@@ -184,6 +185,10 @@ public class VetListFragment extends Fragment {
         @Override
         public int getItemCount() {
             return mVisits.size();
+        }
+
+        public void setVisits (List<Visit> visits){
+            mVisits = visits;
         }
 
 
