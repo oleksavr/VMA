@@ -66,8 +66,21 @@ public class VisitLab {
     }
 
     public Visit getVisit(UUID id){
+        VisitCursorWrapper cursorWrapper = queryVisits(
+                VisitTable.Cols.UUID + " = ?",
+                new String[] {id.toString()}
+        );
 
-        return null;
+        try {
+            if (cursorWrapper.getCount() == 0 ){
+                return null;
+            }
+
+            cursorWrapper.moveToFirst();
+            return cursorWrapper.getVisit();
+        }finally {
+            cursorWrapper.close();
+        }
     }
 
     public void  updateVisit(Visit visit){
