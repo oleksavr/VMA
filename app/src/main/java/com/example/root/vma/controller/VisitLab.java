@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.root.vma.database.VisitCursorWrapper;
 import com.example.root.vma.database.VisitsDbSchema.VisitTable;
 import com.example.root.vma.model.Visit;
 
@@ -64,7 +65,7 @@ public class VisitLab {
                 new String[] {uuidString});
     }
 
-    private Cursor queryVisits(String whereCluse, String[] whereArgs){
+    private VisitCursorWrapper queryVisits(String whereCluse, String[] whereArgs){
         Cursor cursor = mDatabase.query(
                 VisitTable.NAME,
                 null, //null select all columns
@@ -75,7 +76,7 @@ public class VisitLab {
                 null
         );
 
-        return cursor;
+        return new VisitCursorWrapper(cursor);
     }
 
     private static ContentValues getContentValues(Visit visit){
