@@ -2,9 +2,11 @@ package com.example.root.vma.controller;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.PatternMatcher;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -166,8 +168,18 @@ public class VetFragment extends Fragment {
                                                 startActivityForResult(pickContact,REQUEST_CONTACT);
                                             }
                                         }
-
         );
+
+        if (mVisit.getOwner() != null){
+            mOwnerButton.setText(mVisit.getOwner());
+        }
+
+        PackageManager packageManager = getActivity().getPackageManager();
+        if(packageManager.resolveActivity(pickContact,
+                PackageManager.MATCH_DEFAULT_ONLY)== null){
+            mOwnerButton.setEnabled(false);
+        }
+
         return v;
     }
 
