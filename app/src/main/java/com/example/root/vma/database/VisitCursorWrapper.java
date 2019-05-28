@@ -20,11 +20,13 @@ public class VisitCursorWrapper extends CursorWrapper {
         String description = getString(getColumnIndex(VisitsDbSchema.VisitTable.Cols.DESCRIPTION));
         long date = getLong(getColumnIndex(VisitsDbSchema.VisitTable.Cols.DATE));
         int isSolved = getInt(getColumnIndex(VisitsDbSchema.VisitTable.Cols.SOLVED));
+        String owner = getString(getColumnIndex(VisitsDbSchema.VisitTable.Cols.OWNER));
 
         Visit visit = new Visit(UUID.fromString(uuidString));
         visit.setTitle(title);
         visit.setDate(new Date(date));
         visit.setSolved(isSolved !=0);
+        visit.setOwner(owner);
 
         return visit;
     }
