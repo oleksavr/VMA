@@ -3,6 +3,7 @@ package com.example.root.vma.controller;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -33,6 +34,7 @@ public class VetFragment extends Fragment {
     public static final String DIALOG_DATE = "DialogDate";
 
     public static final int REQUEST_DATE = 0;
+    public static final int REQUEST_CONTACT = 1;
 
 
     private Visit mVisit;
@@ -40,7 +42,9 @@ public class VetFragment extends Fragment {
     private EditText mDetailsField;
     private Button mDateButton;
     private CheckBox mSolvedCheckBox;
+    private Button mOwnerButton;
     private Button mReportButton;
+
 
 
     public static VetFragment newInstance(UUID visitID){
@@ -150,6 +154,18 @@ public class VetFragment extends Fragment {
                   startActivity(i);
             }
         });
+
+        final Intent pickContact = new Intent(Intent.ACTION_PICK,
+                ContactsContract.Contacts.CONTENT_URI);
+        mOwnerButton = (Button) v.findViewById(R.id.animal_owner);
+        mOwnerButton.setOnClickListener(new OnClickListener() {
+                                            @Override
+                                            public void onClick(View view) {
+                                                startActivityForResult(pickContact,REQUEST_CONTACT);
+                                            }
+                                        }
+
+        );
         return v;
     }
 
