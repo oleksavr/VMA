@@ -21,6 +21,7 @@
     <string name="visit_report_unsolved">The case is not solved</string>
     <string name="visit_report_no_owner">there is no owner at home</string>
     <string name="visit_report_owner_regected">the %s regect vet service</string>
+    <string name="visit_report_owner">the owner is %s.</string>
     <string name="visit_report_subject">Veterinary Visit Report</string>
     <string name="send_report">Send visit report via</string>
 

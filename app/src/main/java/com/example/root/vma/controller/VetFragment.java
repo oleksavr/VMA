@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import android.widget.EditText;
 
 import com.example.root.vma.R;
 import com.example.root.vma.model.Visit;
+
 
 import java.util.Date;
 import java.util.UUID;
@@ -152,5 +154,25 @@ public class VetFragment extends Fragment {
 
     private void updateDate() {
         mDateButton.setText(mVisit.getDate().toString());
+    }
+
+    private String getVisitReport(){
+        String solvedString = null;
+        if(mVisit.isSolved()){
+            solvedString = getString(R.string.visit_report_solved);
+        }else {
+            solvedString  = getString(R.string.visit_report_unsolved);
+        }
+
+        String dateFormat = "EEE, MMM dd";
+        String dateString = DateFormat.format(dateFormat,mVisit.getDate()).toString();
+        String owner = mVisit.getOwner();
+        if(owner == null){
+            owner = getString(R.string.visit_report_no_owner);
+        }else {
+            owner  = getString(R.string.visit_report_owner,owner);
+        }
+        String report = getString(R.string.visit_report,mVisit.getTitle(),dateString,solvedString,owner);
+        return report;
     }
 }
