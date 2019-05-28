@@ -116,6 +116,7 @@ public class VisitLab {
         values.put(VisitTable.Cols.DESCRIPTION,visit.getDetails());
         values.put(VisitTable.Cols.DATE,visit.getDate().getTime());
         values.put(VisitTable.Cols.SOLVED,visit.isSolved() ? 1 : 0);
+        values.put(VisitTable.Cols.OWNER, visit.getOwner());
 
         return values;
 
