@@ -24,6 +24,7 @@ public class VisitCursorWrapper extends CursorWrapper {
 
         Visit visit = new Visit(UUID.fromString(uuidString));
         visit.setTitle(title);
+        visit.setDetails(description);
         visit.setDate(new Date(date));
         visit.setSolved(isSolved !=0);
         visit.setOwner(owner);

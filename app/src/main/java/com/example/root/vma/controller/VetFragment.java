@@ -22,6 +22,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.root.vma.R;
 import com.example.root.vma.model.Visit;
@@ -102,7 +103,11 @@ public class VetFragment extends Fragment {
         });
 
         mDetailsField = (EditText) v.findViewById(R.id.vet_details);
-        mDetailsField.setText(mVisit.getDetails());
+
+            mDetailsField.setText(mVisit.getDetails());
+        Toast toast = Toast.makeText(getContext(),mVisit.getDetails(),Toast.LENGTH_LONG);
+        toast.show();
+
         mDetailsField.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
