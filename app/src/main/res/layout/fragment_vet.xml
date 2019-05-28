@@ -45,4 +45,16 @@
         android:layout_height="wrap_content"
         android:text="@string/vet_solved_label"/>
 
+    <Button
+        android:id="@+id/animal_owner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/owner_text" />
+
+    <Button
+        android:id="@+id/visit_report"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/visit_report_text" />
+
 </LinearLayout>
