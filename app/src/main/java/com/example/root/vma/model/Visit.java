@@ -10,6 +10,7 @@ public class Visit {
     private String mDetails;
     private Date mDate;
     private boolean mSolved;
+    private String mOwner;
 
     public Visit(){
        this(UUID.randomUUID());
@@ -56,5 +57,13 @@ public class Visit {
 
     public void setSolved(boolean solved) {
         mSolved = solved;
+    }
+
+    public String getOwner() {
+        return mOwner;
+    }
+
+    public void setOwner(String mOwner) {
+        this.mOwner = mOwner;
     }
 }
