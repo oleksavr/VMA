@@ -14,6 +14,15 @@
     <string name="enter_a_ditals">Enter a ditals</string>
     <string name="owner_text">Choose Owner</string>
     <string name="visit_report_text">Send Visit Report</string>
+    <string name="visit_report">%1$s!
+        The visit was on %2$s. %3$s, and %4$s
+    </string>
+    <string name="visit_report_solved">The case is solved</string>
+    <string name="visit_report_unsolved">The case is not solved</string>
+    <string name="visit_report_no_owner">there is no owner at home</string>
+    <string name="visit_report_owner_regected">the %s regect vet service</string>
+    <string name="visit_report_subject">Veterinary Visit Report</string>
+    <string name="send_report">Send visit report via</string>
 
     <plurals name="subtitle_plural">
         <item quantity="one">%1d crime</item>
