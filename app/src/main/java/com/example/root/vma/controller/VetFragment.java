@@ -40,6 +40,7 @@ public class VetFragment extends Fragment {
     private EditText mDetailsField;
     private Button mDateButton;
     private CheckBox mSolvedCheckBox;
+    private Button mReportButton;
 
 
     public static VetFragment newInstance(UUID visitID){
@@ -133,6 +134,19 @@ public class VetFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 mVisit.setSolved(isChecked);
+            }
+        });
+
+        mReportButton = (Button) v.findViewById(R.id.visit_report);
+        mReportButton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                  Intent i = new Intent(Intent.ACTION_SEND);
+                  i.setType("text/plain");
+                  i.putExtra(Intent.EXTRA_TEXT,getVisitReport());
+                  i.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.visit_report_subject));
+                  startActivity(i);
             }
         });
         return v;
