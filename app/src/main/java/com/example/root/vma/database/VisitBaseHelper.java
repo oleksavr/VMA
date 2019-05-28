@@ -23,7 +23,8 @@ public class VisitBaseHelper extends SQLiteOpenHelper {
                 VisitTable.Cols.TITLE + ", " +
                 VisitTable.Cols.DESCRIPTION + ", " +
                 VisitTable.Cols.DATE + ", " +
-                VisitTable.Cols.SOLVED +
+                VisitTable.Cols.SOLVED + ", " +
+                VisitTable.Cols.OWNER +
                 ")"
         );
 
