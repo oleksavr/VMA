@@ -10,6 +10,7 @@ public class VisitsDbSchema {
             public static final String DESCRIPTION = "description";
             public static final String DATE = "date";
             public static final String SOLVED = "solved";
+            public static final String OWNER = "owner";
         }
     }
 }
