@@ -19,6 +19,7 @@ public class VisitLab {
 
     private static VisitLab sVisitLab;
 
+
     private Context mContext;
     private SQLiteDatabase mDatabase;
 
@@ -28,6 +29,7 @@ public class VisitLab {
         mContext = context.getApplicationContext();
         mDatabase = new VisitBaseHelper(mContext)
                 .getWritableDatabase();
+
 
     }
 
