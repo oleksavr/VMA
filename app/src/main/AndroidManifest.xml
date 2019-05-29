@@ -20,6 +20,13 @@
 
         <activity android:name=".controller.VisitPagerActivity"
             android:parentActivityName=".controller.VetListActivity"/>
+
+        <provider
+            android:authorities="com.example.root.vma.fileprovider"
+            android:name="android.support.v4.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+        </provider>
     </application>
 
 </manifest>
