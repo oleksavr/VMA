@@ -22,6 +22,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.root.vma.R;
@@ -49,6 +51,8 @@ public class VetFragment extends Fragment {
     private CheckBox mSolvedCheckBox;
     private Button mOwnerButton;
     private Button mReportButton;
+    private ImageButton mPhotoButton;
+    private ImageView mPhotoView;
 
 
 
@@ -105,8 +109,8 @@ public class VetFragment extends Fragment {
         mDetailsField = (EditText) v.findViewById(R.id.vet_details);
 
             mDetailsField.setText(mVisit.getDetails());
-        Toast toast = Toast.makeText(getContext(),mVisit.getDetails(),Toast.LENGTH_LONG);
-        toast.show();
+       // Toast toast = Toast.makeText(getContext(),mVisit.getDetails(),Toast.LENGTH_LONG);
+      //  toast.show();
 
         mDetailsField.addTextChangedListener(new TextWatcher() {
             @Override
@@ -184,6 +188,9 @@ public class VetFragment extends Fragment {
                 PackageManager.MATCH_DEFAULT_ONLY)== null){
             mOwnerButton.setEnabled(false);
         }
+
+        mPhotoButton = (ImageButton) v.findViewById(R.id.pet_camera);
+        mPhotoView = (ImageView) v.findViewById(R.id.pet_photo);
 
         return v;
     }
