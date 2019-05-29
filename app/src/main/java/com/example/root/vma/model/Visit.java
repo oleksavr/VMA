@@ -66,4 +66,8 @@ public class Visit {
     public void setOwner(String mOwner) {
         this.mOwner = mOwner;
     }
+
+    public String getPhotoFilename (){
+        return "IMG_" + getId().toString() + ".jpg";
+    }
 }

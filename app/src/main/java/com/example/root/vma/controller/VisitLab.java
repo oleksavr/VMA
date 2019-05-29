@@ -10,6 +10,8 @@ import com.example.root.vma.database.VisitCursorWrapper;
 import com.example.root.vma.database.VisitsDbSchema.VisitTable;
 import com.example.root.vma.model.Visit;
 
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -84,6 +86,11 @@ public class VisitLab {
         }finally {
             cursorWrapper.close();
         }
+    }
+
+    public File getPhotoFile(Visit visit){
+        File filesDir = mContext.getFilesDir();
+        return new File(filesDir,visit.getPhotoFilename());
     }
 
     public void  updateVisit(Visit visit){

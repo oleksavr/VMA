@@ -23,6 +23,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
+
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ import com.example.root.vma.R;
 import com.example.root.vma.model.Visit;
 
 
+import java.io.File;
 import java.util.Date;
 import java.util.UUID;
 
@@ -45,6 +47,7 @@ public class VetFragment extends Fragment {
 
 
     private Visit mVisit;
+    private File mPhotoFile;
     private EditText mTitleField;
     private EditText mDetailsField;
     private Button mDateButton;
@@ -71,6 +74,7 @@ public class VetFragment extends Fragment {
         super.onCreate(savedInstanceState);
        UUID visitID = (UUID) getArguments().getSerializable(ARG_VISIT_ID);
         mVisit = VisitLab.get(getActivity()).getVisit(visitID);
+        mPhotoFile = VisitLab.get(getActivity()).getPhotoFile(mVisit);
 
     }
 
