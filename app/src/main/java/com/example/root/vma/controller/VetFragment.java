@@ -224,6 +224,7 @@ public class VetFragment extends Fragment {
             }
         });
         mPhotoView = (ImageView) v.findViewById(R.id.pet_photo);
+        updatePhotoView();
 
         return v;
     }
@@ -260,6 +261,13 @@ public class VetFragment extends Fragment {
                 c.close();
             }
 
+        }else if (requestCode == REQUEST_PHOTO){
+            Uri uri = FileProvider.getUriForFile(getActivity(),
+                    "com.example.root.vma.fileprovider",
+                    mPhotoFile);
+
+            getActivity().revokeUriPermission(uri,Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+            updatePhotoView();
         }
     }
 
